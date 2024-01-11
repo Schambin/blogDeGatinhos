@@ -17,6 +17,7 @@
 
 body{
     width: 100%;
+    max-height: 100vh;
     font-size: 1.6rem;
 }
 
@@ -97,9 +98,10 @@ main{
 }
 
 .catBanner{
-    width: 100%;
+    max-width: 100%;
+    height: auto;
     border-radius: 0 0 .5rem .5rem;
-    margin-bottom: 3rem;
+    margin: 0;
     aspect-ratio: 16/9;
     object-fit: cover;
     overflow: hidden;
@@ -117,9 +119,10 @@ main{
 
 .flexHeader{
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
-    margin: 0rem 2.2rem 3.2rem 0rem;
+    margin: 3.2rem 2.2rem 3.2rem 0rem;
 }
 
 .mainButtons{
@@ -140,6 +143,7 @@ main{
 
 p{
     color: var(--color-text-dark);
+    font-weight: 400;
 }
 
 
@@ -158,18 +162,11 @@ aside{
 }
 
 .card{
-    /* display: grid;
-    gap: 1.6rem; */
-
     display: flex;
     gap: 1.6rem;
-
-    /* height: 8.4rem; */
     width: 38.2rem;
 
     overflow: hidden;
-
-    /* flex: 1; */
 }
 
 figcaption h3{
@@ -198,7 +195,6 @@ footer{
 /* Phones */
 @media (min-width: 425px) {
     .card{
-        display: flex;
         width: auto;
     }
 
@@ -207,47 +203,34 @@ footer{
     } */
 }
 
-@media (min-width: 500px) {
+
+@media (max-width: 500px) {
     .mainHeader{
         display: flex;
         justify-content: space-between;
     }
 }
 
+
+
 /* Desktop */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     
     header{
         padding: 1.2rem 11.2rem;
     }
     
     main{
-        margin: 4rem 0rem;
-
         display: grid;
         justify-content: center;
-        align-items: center;
 
         grid-template-columns: 80rem 40rem;
-        /* grid-template-rows:  repeat(2, auto); */
         column-gap: 3.3rem;
     }
 
     .catBanner{
-        grid-column: 1/2;
-
-        aspect-ratio: 16/9;
-        object-fit: cover;
 
         border-radius: 5px;
-
-        margin-bottom: 3rem;
-    }
-
-    .headerButtons{
-        display: grid;
-        grid-column: 1/2;
-        align-items: center;
     }
 
     .flexHeader{
@@ -256,22 +239,12 @@ footer{
     }
 
     .mainHeader{
-        display: flex;
-    }
-
-    .mainText{
-        display: grid;
-        grid-column: 1/2;
+        line-height: 160%;
     }
 
     aside{
-        display: grid;
-        grid-column: 2/3;
-        grid-row: 1/4;
-    }
-
-    /* footer{
         display: flex;
-    } */
-
+        flex-direction: column;
+        margin: 0;
+    }
 }
