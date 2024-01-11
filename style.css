@@ -16,7 +16,7 @@
 }
 
 body{
-    width: auto;
+    width: 100%;
     font-size: 1.6rem;
 }
 
@@ -25,6 +25,7 @@ body{
     grid-template-rows: max-content 1fr max-content;
 
     width: 100%;
+    height: 100%;
 
     font-family: 'Mulish', sans-serif;
 }
@@ -91,27 +92,30 @@ form input::placeholder{
 
 
 /* mainContent */
+main{
+   margin: 3.2rem 2.2rem;
+}
+
 .catBanner{
     width: 100%;
     border-radius: 0 0 .5rem .5rem;
-    
+    margin-bottom: 3rem;
     aspect-ratio: 16/9;
     object-fit: cover;
+    overflow: hidden;
 }
 
 .mainContent{
     margin: 3.2rem 2.2rem;
 }
 
-.mainContent h2,
-.mainText,
-h3{
+main{
     color: var(--color-text-light);
     line-height: 160%;
 
 }
 
-.mainHeader{
+.flexHeader{
     display: flex;
     align-items: center;
 
@@ -154,26 +158,18 @@ aside{
 }
 
 .card{
-    display: grid;
+    /* display: grid;
+    gap: 1.6rem; */
+
+    display: flex;
     gap: 1.6rem;
 
-    height: 8.4rem;
+    /* height: 8.4rem; */
     width: 38.2rem;
 
     overflow: hidden;
 
-    flex: 1;
-}
-
-.card img{
-    grid-column: 1;
-}
-
-.card figcaption{
-    display: flex;
-    flex-direction: column;
-
-    grid-column: 2;
+    /* flex: 1; */
 }
 
 figcaption h3{
@@ -206,9 +202,9 @@ footer{
         width: auto;
     }
 
-    .card figcaption{
+    /* .card figcaption{
         flex: 1;
-    }
+    } */
 }
 
 @media (min-width: 500px) {
@@ -218,6 +214,7 @@ footer{
     }
 }
 
+/* Desktop */
 @media (min-width: 768px) {
     
     header{
@@ -225,32 +222,56 @@ footer{
     }
     
     main{
-        margin: 4.4rem 11.2rem;
+        margin: 4rem 0rem;
 
         display: grid;
-        grid-template-areas: 
-        "cat cat aside"
-        "text text aside"
-        "parag parag ...";
+        justify-content: center;
+        align-items: center;
 
-        overflow: hidden;
+        grid-template-columns: 80rem 40rem;
+        /* grid-template-rows:  repeat(2, auto); */
+        column-gap: 3.3rem;
     }
 
     .catBanner{
-        /* width: 100%;
-        height: 100%; */
+        grid-column: 1/2;
 
-        object-fit: cover;
         aspect-ratio: 16/9;
-        
-        grid-area: cat;
+        object-fit: cover;
 
-        overflow: hidden;
+        border-radius: 5px;
+
+        margin-bottom: 3rem;
+    }
+
+    .headerButtons{
+        display: grid;
+        grid-column: 1/2;
+        align-items: center;
+    }
+
+    .flexHeader{
+        display: flex;
+        justify-content: space-between;
     }
 
     .mainHeader{
-        display: grid;
-        grid-area: text;    
+        display: flex;
     }
-    
+
+    .mainText{
+        display: grid;
+        grid-column: 1/2;
+    }
+
+    aside{
+        display: grid;
+        grid-column: 2/3;
+        grid-row: 1/4;
+    }
+
+    /* footer{
+        display: flex;
+    } */
+
 }
